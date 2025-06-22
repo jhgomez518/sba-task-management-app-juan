@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to-do | app</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section
+      class="section is-large has-background-info has-text-white has-text-centered pb-5"
+    >
+      <h1 class="title is-1 has-text-white p-0">to-do:</h1>
+      <div id="to-do-container">
+        <label for="todoName">to-do:</label>
+        <input
+          class="todoName"
+          id="todoName"
+          type="text"
+          placeholder="enter a new to-do"
+        />
+        <label for="categoryName">type:</label>
+        <select class="categoryName" id="categoryName">
+          <option value="academic">academic</option>
+          <option value="creative projects">creative projects</option>
+          <option value="health">health</option>
+          <option value="shopping">shopping</option>
+          <option value="cleaning">cleaning</option>
+          <option value="for funsies">for funsies</option>
+          <option value="other">other</option>
+        </select>
+        <label for="deadline">do-by:</label>
+        <input class="deadline" id="deadline" type="date" />
+        <label for="status">status:</label>
+        <select class="status" id="status">
+          <option value="not started">not started</option>
+          <option value="a-doin'">a-doin'</option>
+          <option value="a-done">a-done</option>
+          <option value="a-nvm">a-nvm</option>
+        </select>
+        <!-- the following is so-named because its initial use is that of a button (id),
+         whereas subsequent uses (children--class), is to show "on-time/overdue/a-done" status of the to-dos -->
+        <button class="on-track-button" id="addtodoButton">+ add to-do</button>
+      </div>
+    </section>
+    <section
+      class="section is-medium has-background-white has-text-centered pt-5"
+    >
+      <div class="mb-4">
+        <label for="filter-category">filter:</label>
+        <select id="filter-category">
+          <option value="all">all categories</option>
+          <option value="academic">academic</option>
+          <option value="creative projects">creative projects</option>
+          <option value="health">health</option>
+          <option value="shopping">shopping</option>
+          <option value="cleaning">cleaning</option>
+          <option value="for funsies">for funsies</option>
+          <option value="other">other</option>
+        </select>
+
+        <label for="filter-status" class="ml-4">filter:</label>
+        <select id="filter-status">
+          <option value="all">all statuses</option>
+          <option value="not started">not started</option>
+          <option value="a-doin'">a-doin'</option>
+          <option value="a-done">a-done</option>
+          <option value="a-nvm">a-nvm</option>
+        </select>
+      </div>
+      <h2 class="title is-5">ur list:</h2>
+      <!-- this div will store new tasks added as well as data pertaining to them-->
+      <div id="todo-list-container"></div>
+    </section>
+    <!--
+    <button id="clearTodosButton" class="button is-danger mt-4">
+      Clear All To-Dos
+    </button>
+    -->
+    <script src="app.js"></script>
+  </body>
+</html>
