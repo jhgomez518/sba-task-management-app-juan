@@ -77,8 +77,7 @@ add_todo_button.addEventListener("click", () => {
     /*
         NOTE: this allows user to DIRECTLY UPDATE the displayed list, instead of having to do a
         2-step process where they have to (1) edit and (2) wait for dynamic update based on edit
-    */
-    /* 
+    */ 
     
     // preparing area on page where new tasks will be added
     let todo_list_container = document.querySelector("#todo-list-container")
@@ -185,4 +184,4 @@ filterCategory.addEventListener("change", () => {
 
 filterStatus.addEventListener("change", () => {
     filterTodos()
-;})
+    ;})
