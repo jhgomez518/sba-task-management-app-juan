@@ -25,3 +25,10 @@ Reflection:
    I had left so I decided to learn this afterwards. I understand points will be deducted for not meeting this requirement, but I will
    return and test functionality for local storage when learning this subject arises again. All in all, pleased with what I did manage
    to come up with. Hardest homework so far, for sure.
+
+   Update: I DID get to tackle requirement 5, and I THINK I was at least somewhat successful (see "local_storage_test" image, which
+   is a screenshot of what I think I was supposed to be looking at for testing local storage functionality on the browser).
+   Consulted w3schools and MDN, was surprised by how little information there was on local storage, then it occured to me
+   all I had to do was know how to store and retrieve data someplace, then re-input those values into my functionality.
+   I made a "double" function because I did not want to break the OG one. With more time I would explore the most optimal way
+   to tackle the local storage requirement.
