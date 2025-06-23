@@ -70,19 +70,19 @@ add_todo_button.addEventListener("click", () => {
     deadline_cloned_input.value = new_todo.deadline
     status_cloned_input.value = new_todo.status
 
-    // adds data attributes to clones/new tasks to later allow filtering
+    // adds data attributes to clones/new to-dos to later allow filtering
     todo_container_clone.dataset.category = new_todo.category
     todo_container_clone.dataset.status = new_todo.status
 
 
     /*for cloned-rows (which represent to-dos added to list), 
-      the button will now list if a task is "on time" or "overdue"
+      the button will now list if a to-do is "on time" or "overdue"
       depending on its date*/
     
     let todays_date = new Date()
     let deadline_date = new Date(deadline_cloned_input.value) // to able to do a comparison between the dates
 
-    // task added will be considered overdue if we have passed the date AND its status is not equal to "completed"
+    // to-do added will be considered overdue if we have passed the date AND its status is not equal to "completed"
     if(deadline_date < todays_date && status_cloned_input.value != "a-done") {
         on_track.innerHTML = "overdue"
         on_track.style.color = "red"
@@ -100,13 +100,13 @@ add_todo_button.addEventListener("click", () => {
         2-step process where they have to (1) edit and (2) wait for dynamic update based on edit
     */ 
     
-    // preparing area on page where new tasks will be added
+    // preparing area on page where new to-do will be added
     let todo_list_container = document.querySelector("#todo-list-container")
     todo_list_container.append(todo_container_clone)
 
     /**
-     * the following 2 functions make it so that the user updating the values of an added task's
-     * deadline or status changes the "on-time"/"overdue" label of that task
+     * the following 2 functions make it so that the user updating the values of an added to-do's
+     * deadline or status changes the "on-time"/"overdue" label of that to-do
      */
     deadline_cloned_input.addEventListener("input", () => {
 
@@ -156,13 +156,13 @@ add_todo_button.addEventListener("click", () => {
 
 })
 
-// NOTE: attempted to filter cloned tasks using dataset attributes, but filtering isn't working yet
+// NOTE: attempted to filter cloned to-dos using dataset attributes, but filtering isn't working yet
 function filterTodos() {
 
     let selectedCategory = filterCategory.value
     let selectedStatus = filterStatus.value
 
-    // loops over all the added tasks/clones in the container
+    // loops over all the added to-dos/clones in the container
     let todoItems = todoListContainer.children
 
     for (let item of todoItems) {
@@ -231,7 +231,7 @@ function recover_to_dos(to_do) {
     let todays_date = new Date()
     let deadline_date = new Date(deadline_cloned_input.value) // to able to do a comparison between the dates
 
-    // task added will be considered overdue if we have passed the date AND its status is not equal to "completed"
+    // to-do added will be considered overdue if we have passed the date AND its status is not equal to "completed"
     // use status value from saved object
     if(deadline_date < todays_date && to_do.status != "a-done") {
         on_track.innerHTML = "overdue"
@@ -254,7 +254,7 @@ function recover_to_dos(to_do) {
     todoListContainer.append(todo_container_clone)
 
     /**
-     * the following 2 functions make it so that the user updating the values of an added task's
+     * the following 2 functions make it so that the user updating the values of an added to-do's
      * deadline or status changes the "on-time"/"overdue" label of that to-do
      */
     deadline_cloned_input.addEventListener("input", () => {
