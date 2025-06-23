@@ -11,6 +11,20 @@ let filterCategory = document.querySelector("#filter-category") // drop-down bas
 let filterStatus = document.querySelector("#filter-status") // drop-down based on status
 let todoListContainer = document.querySelector("#todo-list-container") // filter-able area where new to-dos are added
 
+// retrieves any data (as string) as a result of user interacting with app
+let saved_data = localStorage.getItem("to_dos");
+
+/* if there is saved information, use said information to go through
+   our app's functionality once again; functionality re-described for
+   saved user info in function "recover_to_dos()"*/
+if (saved_data) {
+  todo_list = JSON.parse(saved_data); // Convert string back to array
+
+  for (let to_do of todo_list) {
+    recover_to_dos(to_do); // will display saved info after re-inputting data into a replicated function
+  }
+}
+
 // describes what happens when "+Add todo" button is clicked
 add_todo_button.addEventListener("click", () => {
 
@@ -25,6 +39,9 @@ add_todo_button.addEventListener("click", () => {
 
     // todo object is pushed to "todo_list" array
     todo_list.push(new_todo)
+
+    // save object to local storage (as string)
+    localStorage.setItem("to_dos", JSON.stringify(todo_list));
 
     // input values cleared
     todo_inputted.value = ""
