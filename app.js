@@ -307,8 +307,8 @@ function recover_to_dos(to_do) {
 
 filterCategory.addEventListener("change", () => {
   filterTodos();
-});
+})
 
 filterStatus.addEventListener("change", () => {
-    filterTodos()
-    ;})
+    filterTodos();
+})
